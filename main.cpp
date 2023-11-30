@@ -1,40 +1,39 @@
 #include <iostream>
 #include <cmath>
 
+// picture 13
+
 using namespace std;
+
+float x;
 
 float line(int x)
 {
     float y = 0;
-    if (x >= -8 && x < -5)
-    {
-        y = -3;
-    }
     if (x >= -5 && x < -3)
     {
-        y = x + 3;
+        return x + 3;
     }
-    if (x >= -3 && x < 3)
+    if (x >= -3 && x < 0)
     {
-        y = sqrt(9 - x * x);
+        return sqrt(9 - (x * x));
     }
-    if (x >= 3 && x < 8)
+    if (x >= 0 && x < 6)
     {
-        y = 0.6 * (x - 3);
+        return -0.5 * (x - 6);
     }
-    if (x >= 8 && x <= 10)
+    if (x >= 6 && x <= 9)
     {
-        y = 3;
+        return x - 6;
     }
-    return y;
+    return 0;
 }
 
-void main()
+
+float main()
 {
-    cout << "The START" << endl;
-    for (int x = -8; x <= 10; x++)
+    for (int i = -5; i <= 9; i++)
     {
-        cout << "x = " << x << " y = " << line(x) << endl;
+        cout << "x = " << i << "\ty = " << line(i) << endl;
     }
-    cout << "The END";
 }
